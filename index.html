@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/boredomkiller.css">
+	<title>Boredom Killer - Accueil</title>
+	<style>
+		
+		iframe { width: 90vw; height: 70vh; border: 2px solid #00ff99; background: #005a0c}
+	</style>
+</head>
+<body id="indexIframe">
+	<div>
+	<h1><div id="bienvenueLien" onclick="loadPage('welcome.html');return false;">Boredom Killer</div></h1>
+	<div class="menu">
+		<a href="#" onclick="loadPage('morpion.html');return false;">Morpion</a>
+		<a href="#" onclick="loadPage('cpstest.html');return false;">CPS Test</a>
+	</div>
+    	<iframe id="gameFrame" src="welcome.html" title="Jeu" allowfullscreen></iframe>
+	<script>
+		function loadPage(page) {
+			document.getElementById('gameFrame').src = page;
+		}
+	</script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Morpion</title>
+    <link rel="stylesheet" type="text/css" href="css/boredomkiller.css">
+</head>
+
+<body>
+   
+   <div id="conteneur">
+     <div>
+     <p id="bienvenue">Bienvenue dans votre Morpion</p>
+       <div id= "regles">Le morpion jeu se joue sur une grille de 3×3 cases avec deux joueurs qui alternent en plaçant leurs symboles (X et O).
+        L’objectif est d’aligner trois symboles identiques horizontalement, verticalement ou en diagonale.</div>
+        <p id="score"> score de joueur avec les X: 0 / score de joueur avec les O: 0</p>
+      </div> 
+      <div id="cont">
+          <div><button id="id1" onclick="x('id1')"></div>
+          <div><button id="id2" onclick="x('id2')"></div>
+          <div><button id="id3" onclick="x('id3')"></div>
+          <div><button id="id4" onclick="x('id4')"></div>
+          <div><button id="id5" onclick="x('id5')"></div>
+          <div><button id="id6" onclick="x('id6')"></div>
+          <div><button id="id7" onclick="x('id7')"></div>
+          <div><button id="id8" onclick="x('id8')"></div>
+          <div><button id="id9" onclick="x('id9')"></div>
+         
+          <button id= "rejouer" onclick="d()"  >Rejouer</button>
+      </div>
+      <div>
+           </div>
+   </div>
+      
+
+<script>
+var scoreO=0;
+var scoreX=0;
+var tour=0;
+function x(a) {
+    var bout=document.getElementById(a)
+    if (bout.innerHTML==""){
+      if (tour%2==0){
+        bout.innerHTML="X"
+        bout.disabled = true;
+      }
+      else{
+        bout.innerHTML="O"
+        bout.disabled = true;
+        
+      }
+      }
+    tour = tour+1;
+    v()
+
+}
+function v(){
+    if (document.getElementById("id1").innerHTML=="X" && document.getElementById("id2").innerHTML=="X" &&  document.getElementById("id3").innerHTML=="X"){
+          document.getElementById("id1").style="background-color:green;"
+          document.getElementById("id2").style="background-color:green;"
+          document.getElementById("id3").style="background-color:green;"
+          document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreX=scoreX+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    }
+    else if (document.getElementById("id1").innerHTML=="X" && document.getElementById("id4").innerHTML=="X" &&  document.getElementById("id7").innerHTML=="X"){
+          document.getElementById("id1").style="background-color:green;"
+          document.getElementById("id4").style="background-color:green;"
+          document.getElementById("id7").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreX=scoreX+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+    }else if (document.getElementById("id2").innerHTML=="X" && document.getElementById("id5").innerHTML=="X" &&  document.getElementById("id8").innerHTML=="X"){
+          document.getElementById("id2").style="background-color:green;"
+          document.getElementById("id5").style="background-color:green;"
+          document.getElementById("id8").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreX=scoreX+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+    }else if (document.getElementById("id3").innerHTML=="X" && document.getElementById("id6").innerHTML=="X" &&  document.getElementById("id9").innerHTML=="X"){
+          document.getElementById("id3").style="background-color:green;"
+          document.getElementById("id6").style="background-color:green;"
+          document.getElementById("id9").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreX=scoreX+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    }else if (document.getElementById("id1").innerHTML=="X" && document.getElementById("id5").innerHTML=="X" &&  document.getElementById("id9").innerHTML=="X"){
+          document.getElementById("id1").style="background-color:green;"
+          document.getElementById("id5").style="background-color:green;"
+          document.getElementById("id9").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreX=scoreX+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+      }else if (document.getElementById("id4").innerHTML=="X" && document.getElementById("id5").innerHTML=="X" &&  document.getElementById("id6").innerHTML=="X"){
+          document.getElementById("id4").style="background-color:green;"
+          document.getElementById("id5").style="background-color:green;"
+          document.getElementById("id6").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreX=scoreX+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+          }else if (document.getElementById("id7").innerHTML=="X" && document.getElementById("id8").innerHTML=="X" &&  document.getElementById("id9").innerHTML=="X"){
+          document.getElementById("id7").style="background-color:green;"
+          document.getElementById("id8").style="background-color:green;"
+          document.getElementById("id9").style="background-color:green;"
+      }else if (document.getElementById("id3").innerHTML=="X" && document.getElementById("id5").innerHTML=="X" &&  document.getElementById("id7").innerHTML=="X"){
+          document.getElementById("id3").style="background-color:green;"
+          document.getElementById("id5").style="background-color:green;"
+          document.getElementById("id7").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreX=scoreX+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+
+
+           }else if (document.getElementById("id1").innerHTML=="O" && document.getElementById("id2").innerHTML=="O" &&  document.getElementById("id3").innerHTML=="O"){
+          document.getElementById("id1").style="background-color:green;"
+          document.getElementById("id2").style="background-color:green;"
+          document.getElementById("id3").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreO=scoreO+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    }
+    
+    else if (document.getElementById("id1").innerHTML=="O" && document.getElementById("id4").innerHTML=="O" &&  document.getElementById("id7").innerHTML=="O"){
+          document.getElementById("id1").style="background-color:green;"
+          document.getElementById("id4").style="background-color:green;"
+          document.getElementById("id7").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreO=scoreO+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+    }else if (document.getElementById("id2").innerHTML=="O" && document.getElementById("id5").innerHTML=="O" &&  document.getElementById("id8").innerHTML=="O"){
+          document.getElementById("id2").style="background-color:green;"
+          document.getElementById("id5").style="background-color:green;"
+          document.getElementById("id8").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreO=scoreO+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+    }else if (document.getElementById("id3").innerHTML=="O" && document.getElementById("id6").innerHTML=="O" &&  document.getElementById("id9").innerHTML=="O"){
+          document.getElementById("id3").style="background-color:green;"
+          document.getElementById("id6").style="background-color:green;"
+          document.getElementById("id9").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreO=scoreO+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+    }else if (document.getElementById("id1").innerHTML=="O" && document.getElementById("id5").innerHTML=="O" &&  document.getElementById("id9").innerHTML=="O"){
+          document.getElementById("id1").style="background-color:green;"
+          document.getElementById("id5").style="background-color:green;"
+          document.getElementById("id9").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreO=scoreO+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+      }else if (document.getElementById("id4").innerHTML=="O" && document.getElementById("id5").innerHTML=="O" &&  document.getElementById("id6").innerHTML=="O"){
+          document.getElementById("id4").style="background-color:green;"
+          document.getElementById("id5").style="background-color:green;"
+          document.getElementById("id6").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreO=scoreO+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+          }else if (document.getElementById("id7").innerHTML=="O" && document.getElementById("id8").innerHTML=="O" &&  document.getElementById("id9").innerHTML=="O"){
+          document.getElementById("id7").style="background-color:green;"
+          document.getElementById("id8").style="background-color:green;"
+          document.getElementById("id9").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreO=scoreO+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    
+      }else if (document.getElementById("id3").innerHTML=="O" && document.getElementById("id5").innerHTML=="O" &&  document.getElementById("id7").innerHTML=="O"){
+          document.getElementById("id3").style="background-color:green;"
+          document.getElementById("id5").style="background-color:green;"
+          document.getElementById("id7").style="background-color:green;"
+            document.getElementById("id1").disabled=true;
+          document.getElementById("id2").disabled=true;
+          document.getElementById("id3").disabled=true;
+          document.getElementById("id4").disabled=true;
+          document.getElementById("id5").disabled=true;
+          document.getElementById("id6").disabled=true;
+          document.getElementById("id7").disabled=true;
+          document.getElementById("id8").disabled=true;
+          document.getElementById("id9").disabled=true;
+          scoreO=scoreO+1
+          document.getElementById("score").innerHTML="score du joueur avec les X: "+scoreX+" / score du joueur avec les O:"+scoreO
+
+    }
+}
+function d(){
+          document.getElementById("id1").disabled=false;
+          document.getElementById("id2").disabled=false;
+          document.getElementById("id3").disabled=false;
+          document.getElementById("id4").disabled=false;
+          document.getElementById("id5").disabled=false;
+          document.getElementById("id6").disabled=false;
+          document.getElementById("id7").disabled=false;
+          document.getElementById("id8").disabled=false;
+          document.getElementById("id9").disabled=false;
+          document.getElementById("id1").innerHTML="";
+          document.getElementById("id2").innerHTML="";
+          document.getElementById("id3").innerHTML="";
+          document.getElementById("id4").innerHTML="";
+          document.getElementById("id5").innerHTML="";
+          document.getElementById("id6").innerHTML="";
+          document.getElementById("id7").innerHTML="";
+          document.getElementById("id8").innerHTML="";
+          document.getElementById("id9").innerHTML="";
+          document.getElementById("id1").style="background-color:grid;"
+          document.getElementById("id2").style="background-color:grid;"
+          document.getElementById("id3").style="background-color:grid;"
+          document.getElementById("id4").style="background-color:grid;"
+          document.getElementById("id5").style="background-color:grid;"
+          document.getElementById("id6").style="background-color:grid;"
+          document.getElementById("id7").style="background-color:grid;"
+          document.getElementById("id9").style="background-color:grid;"
+          document.getElementById("id8").style="background-color:grid;"
+          
+}
+
+
+</script>
+
+</body>
+</html>

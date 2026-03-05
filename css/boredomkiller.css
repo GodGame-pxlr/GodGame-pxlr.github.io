@@ -1,0 +1,200 @@
+:root {
+  --green-600: #16a34a;
+  --green-800: #166534;
+  --green-900: #14532d;
+  --gray-100: #f3f4f6;
+  --gray-300: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: var(--green-900);
+  color: white;
+}
+
+.gameFrame {
+  background-color: var(--green-800);
+  width: 90vw;
+  height: 70vh;
+  border: 2px solid var(--green-600)
+}
+
+#jeux {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.welcome-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background: url('../image/fond.jpeg') center/cover no-repeat;
+}
+
+#zoneClic {
+  width: 100%;
+  height: 350px;
+  border: 2px solid var(--gray-300);
+  border-radius: 15px;
+  background: var(--green-800);
+  color: white;
+  font-size: clamp(18px, 2.4vw, 26px);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  line-height: 1.5;
+}
+
+#zoneClic:hover {
+  background: var(--green-600);
+  border-color: var(--gray-100);
+}
+
+#zoneClic:active {
+  transform: scale(0.9);
+}
+
+#zoneScore {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--green-900);
+  border: 1px solid var(--gray-300);
+  font-size: 20px;
+  text-align: center;
+}
+
+#scoreCps {
+  font-weight: bold;
+
+}
+
+/*code d'ethan I pour le css du boredomkiller.*/
+#bienvenue {
+  position: fixed;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+  font-size: 24px;
+}
+
+#regles {
+  display: none;
+}
+
+#bienvenue:hover+#regles,
+#regles:hover {
+  display: block;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+h4 {
+  text-align: center;
+}
+
+#cont {
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+
+#cont>div {
+  border: solid black 3px;
+}
+
+button {
+  width: 130px;
+  height: 130px;
+  font-size: 50px;
+  color: black;
+}
+
+#rejouer {
+  width: 100px;
+  height: 25px;
+  font-size: 18px;
+}
+
+#conteneur {
+  width: 100%;
+  display: flex;
+}
+
+#conteneur>div {
+  width: 33.33%;
+}
+
+#score {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--green-900);
+  border: 1px solid var(--gray-300);
+  font-size: 20px;
+  text-align: center;
+}
+
+/*css de la page welcome*/
+
+#bienvenueHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  text-align: center;
+}
+
+#bienvenueLien {
+  color: white;
+  text-decoration: none;
+}
+
+/*css de l'index*/
+#indexIframe {
+  background: black;
+  text-align: center;
+}
+
+.menu {
+  margin: 40px 0;
+}
+
+.menu a {
+  color: #00ff99;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 1.5rem;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}

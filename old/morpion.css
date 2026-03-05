@@ -1,0 +1,42 @@
+#cont{
+
+	display: grid;
+	grid-template: 150px 150px 150px / 150px 150px 150px;
+	text-align: center;
+
+}
+
+#cont>div{
+	border: solid black 3px;
+}
+
+button{
+	width: 100%;
+	height: 100%;
+font-size: 50px;
+color:black;
+}
+#rejouer{
+	width: 100px;
+	height: 25px;
+	font-size: 18px;
+}
+p{
+	font-style:italic;
+	color:white;
+}
+h1{
+	color:white;
+}
+#conteneur{
+	width: 100%;
+	display: flex;
+}
+#conteneur>div{
+	width: 33.33%;
+
+}
+
+html{
+  background-color: black;
+}
