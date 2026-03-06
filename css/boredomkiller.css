@@ -198,3 +198,16 @@ button {
 .menu a:hover {
   text-decoration: underline;
 }
+
+#caillou{
+	height:250px;
+	width:250px;
+}
+#ciseaux{
+	height:250px;
+	width:250px;
+}
+#papier{
+  height:250px;
+	width:250px;
+}
