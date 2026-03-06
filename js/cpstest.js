@@ -18,6 +18,8 @@ zoneClic.addEventListener("click", function () {
       if (compteur <= 0) {
         clearInterval(interval);
         testEnCours = false;
+        compteur = 0
+        alert("Ton score est de : "+scoreNombre/10+"cps")
       }
     }, 1000);
   }
