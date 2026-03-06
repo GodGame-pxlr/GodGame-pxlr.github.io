@@ -6,40 +6,68 @@
 	<link rel="stylesheet" href="style.css">
   </head><body>
    <h1>papier caillou ciseaux</h1>
-   <div><button onclick="jouer('papier')">papier</button> 
-        <button onclick="jouer('caillou')">caillou</button>
-        <button onclick="jouer('ciseaux')">ciseaux</button></div>
-<img id="ciseaux" src="ciso.png">
-<img id="papier" src="papié.png"> 
-<img id="caillou" src="caillou.png">
+   <div>
+	   <button onclick="jouer('papier')">papier</button> 
+       <button onclick="jouer('caillou')">caillou</button>
+       <button onclick="jouer('ciseaux')">ciseaux</button>
+   </div>
+<img id="ciseaux" src="ciso.png" alt="Papier">
+<img id="papier" src="papié.png" alt="Caillou"> 
+<img id="caillou" src="caillou.png" alt="Ciseaux">
+<div id="resultat"></div>
 </body>
+	
 <script>
-    function jouer(x) {
-        if(x=="ciseaux"){
-            console.log("tu as jouer ciseaux")}
-        else if(x=="caillou"){
-            console.log("tu as jouer caillou")}
-        else if(x=="papier"){
-            console.log("tu as jouer papier")}
-    var a = Math.random()
-    if (a<1/3){alert("tu as jouer papier")}
-    else if (a<2/3)
-        alert("tu as jouer caillou")
-    else(a<3/3)
-    alert("tu as jouer ciseaux")
-    function jouer("jouer('papier')"
-   if (a<2/3)
-        alert("tu as gagné(e)")
-   else if (a<3/3)
-    alert("tu as perdu(e)")
-    function jouer ("jouer('ciseaux')"
-    if (a<2/3)
-        alert("tu as perdu")
-    else if (a<1/3)
-        alert("tu as gagné")
-    function jouer ("jouer('caillou')"
-    if (a<1/3)
-        alert("tu as perdu")
-    else (a<3/3)"tu as gagné"
-	}
-</script></html>
+	const choixJoueurElement = document.getElementById('resultat'); // Utilisation d'un div pour afficher le résultat
+    const images = {
+        papier: document.getElementById('papier'),
+        caillou: document.getElementById('caillou'),
+        ciseaux: document.getElementById('ciseaux')
+	};
+
+	const choixOrdinateurPossibles = ['papier', 'caillou', 'ciseaux'];
+	
+    function jouer(choixJoueur) {
+
+        console.log(`Le joueur a choisi : ${choixJoueur}`);
+        choixJoueurElement.textContent = `Vous avez choisi : ${choixJoueur.charAt(0).toUpperCase() + choixJoueur.slice(1)}`; // Capitalisation
+
+        // Afficher l'image du choix du joueur
+        for (const choix in images) {
+            images[choix].classList.remove('selected');
+        }
+        if (images[choixJoueur]) {
+            images[choixJoueur].classList.add('selected');
+        }
+
+
+        const indexAleatoire = Math.floor(Math.random() * choixOrdinateurPossibles.length);
+        const choixOrdinateur = choixOrdinateurPossibles[indexAleatoire];
+        console.log(`L'ordinateur a choisi : ${choixOrdinateur}`);
+
+
+        let resultatPartie = "";
+        if (choixJoueur === choixOrdinateur) {
+            resultatPartie = "Égalité !";
+        } else if (
+            (choixJoueur === 'papier' && choixOrdinateur === 'caillou') ||
+            (choixJoueur === 'caillou' && choixOrdinateur === 'ciseaux') ||
+            (choixJoueur === 'ciseaux' && choixOrdinateur === 'papier')
+        ) {
+            resultatPartie = "Vous avez gagné !";
+        } else {
+            resultatPartie = "Vous avez perdu !";
+        }
+
+        choixJoueurElement.textContent += ` - L'ordinateur a choisi : ${choixOrdinateur.charAt(0).toUpperCase() + choixOrdinateur.slice(1)}. ${resultatPartie}`;
+        console.log(`Résultat : ${resultatPartie}`);
+
+    	}
+
+        document.addEventListener('DOMContentLoaded', () => {
+            for (const choix in images) {
+                images[choix].classList.remove('selected');
+            }
+        });
+    </script>
+</html>
